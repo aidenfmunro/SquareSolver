@@ -6,124 +6,127 @@
 
 #define EPS 1e-9
 
-int input(void);
-int output(void);
-int linear_solver(double b, double c);
-int square_solver(double a, double b, double c);
-bool isAlmostEqual(double a, double b);
+enum State {InvalidExpression =  -1, NoRoots = 0, OneRoot = 1, TwoRoots = 2, Ok = 3};
 
-double coefficients[3] = {0, 0, 0};
-char letters[3] = {'a', 'b', 'c'};
-double roots[2] = {0, 0};
+int input(double *a, double *b, double *c);
+int output(double a, double b, double c, double *roots);
+int linearSolver(double b, double c, double *roots);
+int squareSolver(double a, double b, double c, double *roots);
+bool doubleCompare(double a, double b);
+void bufferCleaner(void);
+
 
 
 int main()
 {
+    double a = 0;
+    double b = 0;
+    double c = 0;
+
+    double roots[2] = {0, 0};
+
     printf("Please type in the coefficients a, b, c \n");
 
-    input();
+    input(&a, &b, &c);
 
-    output();
+    output(a, b, c, roots);
 }
 
 
-int linear_solver(double b, double c)
+int linearSolver(double b, double c, double *roots)
 {
-    if (isAlmostEqual(b, 0))
+    if (doubleCompare(b, 0))
       {
-        return 1;
+        return InvalidExpression;
       }
     else
       {
-        roots[0] = - c / b;
+        *roots = - c / b;
+
+        return OneRoot;
       }
-
-    return 0;
-
 }
 
 
-int square_solver(double a, double b, double c)
+int squareSolver(double a, double b, double c, double *roots)
 {
-    double d, sqrt_d;
-    d = pow(b, 2) - 4 * a * c;
-    sqrt_d = sqrt(d);
+    double d = 0;
+    double sqrt_d = 0;
 
-    if (d < 0)
-      {
-        return 1;
-      }
-    else if (isAlmostEqual(d, 0))
-      {
-        roots[0] = -b / (2 * a);
-        return 2;
+    d = b * b - 4 * a * c;
 
+    if (doubleCompare(a, 0))
+      {
+        linearSolver(b, c, roots);
+
+        return Ok;
       }
     else
       {
-        roots[0] = (-b + sqrt_d) / (2 * a);
-        roots[1] =  (-b - sqrt_d) / (2 * a);
+        if (d < 0)
+          {
+            return NoRoots;
+          }
+        else if (doubleCompare(d, 0))
+          {
+            *roots = -b / (2 * a);
+
+            return OneRoot;
+          }
+        else
+          {
+            sqrt_d = sqrt(d);
+            *roots = (-b + sqrt_d) / (2 * a);
+            *(roots + 1) =  (-b - sqrt_d) / (2 * a);
+
+            return TwoRoots;
+          }
+      }
+}
+
+int input(double *a, double *b, double *c) // changed
+{
+    while (scanf("%lf %lf %lf", a, b, c) != 3)
+      {
+        printf("Incorrect input, please try again: ");
+        bufferCleaner();
       }
 
-    return 0;
+    return Ok;
 }
 
-
-int input(void)
+int output(double a, double b, double c, double *roots)
 {
-    for (int i = 0; i <= 2; ++i)
-        {
+    int result = 0;
 
-        int res = 0;
+    result = squareSolver(a, b, c, roots);
 
-        do {
-            printf("Type in coefficient %c\n", letters[i]);
-            res = scanf("%lf", &coefficients[i]);
-            fflush(stdin);
-           } while (res != 1);
+    if (result == -1)
+      {
+        printf("Invalid expression.");
+      }
+    else if (result == 0)
+      {
+        printf("No roots.");
+      }
+    else if (result == 1)
+      {
+        printf("One root: %lf", *roots);
+      }
+    else if (result == 2)
+      {
+        printf("Two roots: %lf %lf", *roots, *(roots + 1));
+      }
 
-        }
-
-    return 0;
+    return Ok;
 }
 
-
-int output(void)
-{
-    if (isAlmostEqual(coefficients[0], 0))
-        {
-            if (linear_solver(coefficients[1], coefficients[2]) == 1)
-            {
-                printf("Invalid expression");
-            }
-            else
-            {
-                printf("One root: %lf", roots[0]);
-            }
-        }
-    else
-        {
-            if (square_solver(coefficients[0], coefficients[1], coefficients[2]) == 1)
-            {
-                printf("Oops! Your equation has no real roots.");
-            }
-            else if (square_solver(coefficients[0], coefficients[1], coefficients[2]) == 2)
-            {
-                printf("One root: %lf", roots[0]);
-            }
-            else
-                printf("Two roots: %lf and %lf", roots[0], roots[1]);
-        }
-
-    return 0;
-}
-
-
-
-bool isAlmostEqual(double a, double b)
+bool doubleCompare(double a, double b) //change name doubleCompare
 {
     return fabs(a - b) < EPS;
 }
 
-
-
+void bufferCleaner(void)
+{
+    while (getchar() != '\n') { ; }
+}
