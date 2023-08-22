@@ -3,15 +3,24 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <conio.h>
+#include <assert.h>
 
 #define EPS 1e-9
 
-enum State {InvalidExpression =  -1, NoRoots = 0, OneRoot = 1, TwoRoots = 2, Ok = 3};
+enum State
+{
+  INFINITE_ROOTS =  -1, // add headers
+  NO_ROOTS = 0,
+  ONE_ROOT,
+  TWO_ROOTS,
+  OK
+};
 
 int input(double *a, double *b, double *c);
-int output(double a, double b, double c, double *roots);
-int linearSolver(double b, double c, double *roots);
-int squareSolver(double a, double b, double c, double *roots);
+int output(int result, double *x1, double *x2);
+int linearSolver(double b, double c, double *x1, double *x2);
+int squareSolver(double a, double b, double c, double *x1, double *x2);
+int equationSolver(double a, double b, double c, double *x1, double *x2);
 bool doubleCompare(double a, double b);
 void bufferCleaner(void);
 
@@ -19,114 +28,139 @@ void bufferCleaner(void);
 
 int main()
 {
-    double a = 0;
-    double b = 0;
-    double c = 0;
-
-    double roots[2] = {0, 0};
-
-    printf("Please type in the coefficients a, b, c \n");
+    double a = NAN, b = NAN, c = NAN, x1 = NAN, x2 = NAN;
 
     input(&a, &b, &c);
 
-    output(a, b, c, roots);
+    int result = equationSolver(a, b, c, &x1, &x2);
+
+    output(result, &x1, &x2);
 }
 
 
-int linearSolver(double b, double c, double *roots)
+int linearSolver(double b, double c, double *x1, double *x2)
 {
     if (doubleCompare(b, 0))
       {
-        return InvalidExpression;
-      }
-    else
-      {
-        *roots = - c / b;
-
-        return OneRoot;
-      }
-}
-
-
-int squareSolver(double a, double b, double c, double *roots)
-{
-    double d = 0;
-    double sqrt_d = 0;
-
-    d = b * b - 4 * a * c;
-
-    if (doubleCompare(a, 0))
-      {
-        linearSolver(b, c, roots);
-
-        return Ok;
-      }
-    else
-      {
-        if (d < 0)
+        if (doubleCompare(c, 0))
           {
-            return NoRoots;
-          }
-        else if (doubleCompare(d, 0))
-          {
-            *roots = -b / (2 * a);
-
-            return OneRoot;
+            return INFINITE_ROOTS; // no roots
           }
         else
           {
-            sqrt_d = sqrt(d);
-            *roots = (-b + sqrt_d) / (2 * a);
-            *(roots + 1) =  (-b - sqrt_d) / (2 * a);
-
-            return TwoRoots;
+            return NO_ROOTS;
           }
+      }
+    else
+      {
+        *x1 = - c / b;
+
+        return ONE_ROOT;
       }
 }
 
-int input(double *a, double *b, double *c) // changed
+
+int squareSolver(double a, double b, double c, double *x1, double *x2)
 {
-    while (scanf("%lf %lf %lf", a, b, c) != 3)
+    double d = 0;
+    double sqrtd = 0;
+
+
+    d = b * b - 4 * a * c;
+    if (d < 0)
+      {
+        return NO_ROOTS;
+      }
+    else if (doubleCompare(d, 0))
+      {
+        *x1 = -b / (2 * a);
+
+        return ONE_ROOT;
+      }
+    else
+      {
+        sqrtd = sqrt(d);
+        *x1 = (-b + sqrtd) / (2 * a);
+        *x2 =  (-b - sqrtd) / (2 * a);
+
+        return TWO_ROOTS;
+      }
+
+}
+
+int equationSolver(double a, double b, double c, double *x1, double *x2)
+{
+    assert(isfinite(a));
+    assert(isfinite(b));
+    assert(isfinite(c));
+
+    assert(x1);
+    assert(x2);
+
+    if (doubleCompare(a, 0))
+      {
+        return linearSolver(b, c, x1, x2);
+      }
+    else
+      {
+        return squareSolver(a, b, c, x1, x2);
+      }
+
+    return OK;
+}
+
+int input(double *a, double *b, double *c)
+{
+    assert(a);
+    assert(b);
+    assert(c);
+
+    printf("Please type in the coefficients a, b, c \n");
+
+    while (scanf("%lf %lf %lf", a, b, c) != 3 || getchar() != '\n') //spaces
       {
         printf("Incorrect input, please try again: ");
         bufferCleaner();
       }
 
-    return Ok;
+    return OK;
 }
 
-int output(double a, double b, double c, double *roots)
+int output(int result, double *x1, double *x2)
 {
-    int result = 0;
+    assert(result);
+    assert(x1);
+    assert(x2);
+    switch (result)
+      {
+        case NO_ROOTS:
+          printf("No roots.");
+          break;
 
-    result = squareSolver(a, b, c, roots);
+        case ONE_ROOT:
+          printf("One root: %lg", *x1);
+          break;
 
-    if (result == -1)
-      {
-        printf("Invalid expression.");
-      }
-    else if (result == 0)
-      {
-        printf("No roots.");
-      }
-    else if (result == 1)
-      {
-        printf("One root: %lf", *roots);
-      }
-    else if (result == 2)
-      {
-        printf("Two roots: %lf %lf", *roots, *(roots + 1));
+        case TWO_ROOTS:
+          printf("Two roots: %lg %lg", *x1, *x2);
+          break;
+
+        case INFINITE_ROOTS:
+          printf("Infinite roots.");
+          break;
+
+        default: printf("main(): Unknown option.");
       }
 
-    return Ok;
+    return OK;
 }
 
-bool doubleCompare(double a, double b) //change name doubleCompare
+bool doubleCompare(double a, double b)
 {
     return fabs(a - b) < EPS;
 }
 
 void bufferCleaner(void)
 {
-    while (getchar() != '\n') { ; }
+    while (getchar() != '\n') ;
 }
