@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-#include "minorutil.h"
+#include "../headers/minorutil.h"
 
 #define EPS 1e-9
 

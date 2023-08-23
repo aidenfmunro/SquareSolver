@@ -2,9 +2,9 @@
 #include <math.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "ioutil.h"
-#include "minorutil.h"
-#include "solvingutil.h"
+#include "../headers/ioutil.h"
+#include "../headers/minorutil.h"
+#include "../headers/solvingutil.h"
 
 int input(double *a, double *b, double *c)
 {
@@ -12,9 +12,9 @@ int input(double *a, double *b, double *c)
     assert(b);
     assert(c);
 
-    printf("Please type in the coefficients a, b, c \n");
+    printf("Please type in the coefficients a, b, c. Please type enter after last number\n");
 
-    while (scanf("%lf %lf %lf", a, b, c) != 3 || getchar() != '\n') //spaces
+    while (scanf("%lf %lf %lf", a, b, c) != 3 || checkInput()) //spaces
       {
         printf("Incorrect input, please try again: ");
         bufferCleaner();
@@ -50,4 +50,11 @@ int output(int result, double *x1, double *x2)
       }
 
     return OK;
+}
+
+int checkInput(void)
+{
+    while(getchar() != ' ')
+        return 1;
+    return 0;
 }
