@@ -23,7 +23,7 @@ static const int SHIFT = 1;
                             if (! (EXPRESSION))                                \
                               {                                                \
         fprintf (stderr,"%s, failed at %s:%d\n", ERROR_MSG[ERROR_CODE - SHIFT] \
-        , __FILE__, __LINE__);  \
+        , __FILE__, __LINE__);                                                 \
         exit(ERROR_CODE);                                                                              \
       }
 /**

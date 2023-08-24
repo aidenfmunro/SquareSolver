@@ -27,7 +27,6 @@ int input(double *a, double *b, double *c)
 
 int output(int numRoots, double *x1, double *x2)
 {
-    myAssert(numRoots, NULL_ERROR);
     myAssert(x1, NULL_ERROR);
     myAssert(x2, NULL_ERROR);
     switch (numRoots)
