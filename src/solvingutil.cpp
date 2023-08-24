@@ -1,8 +1,10 @@
+#include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
 #include <assert.h>
 #include "../headers/solvingutil.h"
 #include "../headers/minorutil.h"
+#include "../headers/myassert.h"
 
 int linearSolver(double b, double c, double *x1)
 {
@@ -69,12 +71,12 @@ int squareSolver(double a, double b, double c, double *x1, double *x2)
 
 int equationSolver(double a, double b, double c, double *x1, double *x2)
 {
-    assert(isfinite(a));
-    assert(isfinite(b));
-    assert(isfinite(c));
+    myAssert(isfinite(a), IS_FINITE_ERROR);
+    myAssert(isfinite(b), IS_FINITE_ERROR);
+    myAssert(isfinite(c), IS_FINITE_ERROR);
 
-    assert(x1);
-    assert(x2);
+    myAssert(x1, NULL_ERROR);
+    myAssert(x2, NULL_ERROR);
 
     if (doubleCompare(a, 0))
       {
