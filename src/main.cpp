@@ -6,6 +6,10 @@
 
 int main(int n, char *argv[])
 {
+    if (n != 2)
+      {
+        printf("You forgot to type in s- or t- , oopsies");
+      }
     if (strcmp (argv[1], "t-") != 0)
       {
         double a = NAN, b = NAN, c = NAN, x1 = NAN, x2 = NAN;
@@ -16,7 +20,7 @@ int main(int n, char *argv[])
 
         output(numRoots, &x1, &x2);
       }
-    else if (strcmp (argv[1], "solve") != 0)
+    else if (strcmp (argv[1], "s-") != 0)
       {
         testEquation();
       }

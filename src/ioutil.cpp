@@ -12,7 +12,7 @@ int input(double *a, double *b, double *c)
     assert(b);
     assert(c);
 
-    printf("Please type in the coefficients a, b, c. Please type enter after last number\n");
+    printf("Please type in the coefficients a, b, c \n");
 
     while (scanf("%lf %lf %lf", a, b, c) != 3 || checkInput()) //spaces
       {
