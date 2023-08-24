@@ -1,0 +1,120 @@
+\doxysection{C\+:/\+Users/aiden/\+Documents/\+Git\+Hub/\+Square\+Solver/headers/solvingutil.h File Reference}
+\hypertarget{solvingutil_8h}{}\label{solvingutil_8h}\index{C:/Users/aiden/Documents/GitHub/SquareSolver/headers/solvingutil.h@{C:/Users/aiden/Documents/GitHub/SquareSolver/headers/solvingutil.h}}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{solvingutil_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}} \{ \newline
+{\bfseries INFINITE\+\_\+\+ROOTS} = -\/1
+, {\bfseries NO\+\_\+\+ROOTS} = 0
+, {\bfseries ONE\+\_\+\+ROOT}
+, {\bfseries TWO\+\_\+\+ROOTS}
+, \newline
+{\bfseries OK}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{solvingutil_8h_a72ed41b6ff399603e580904bd48b12c5}{linear\+Solver}} (double b, double c, double \texorpdfstring{$\ast$}{*}x1)
+\begin{DoxyCompactList}\small\item\em Linear equation solver. Puts the root of the equation in x1. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{solvingutil_8h_a0212f420b1b374b839d1025216df20ad}{square\+Solver}} (double a, double b, double c, double \texorpdfstring{$\ast$}{*}x1, double \texorpdfstring{$\ast$}{*}x2)
+\begin{DoxyCompactList}\small\item\em Square equation solver. Puts the roots of the equation in x1 and x2 if there are 2 roots, if there is 1 root puts it in x1. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{solvingutil_8h_a98f32bf1e2f8c6e97f5812f9c4d3b384}{equation\+Solver}} (double a, double b, double c, double \texorpdfstring{$\ast$}{*}x1, double \texorpdfstring{$\ast$}{*}x2)
+\begin{DoxyCompactList}\small\item\em Equation solver. This function connects both square and linear functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Aiden Munro 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{solvingutil_8h_a5d74787dedbc4e11c1ab15bf487e61f8}\label{solvingutil_8h_a5d74787dedbc4e11c1ab15bf487e61f8} 
+\index{solvingutil.h@{solvingutil.h}!State@{State}}
+\index{State@{State}!solvingutil.h@{solvingutil.h}}
+\doxysubsubsection{\texorpdfstring{State}{State}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{solvingutil_8h_a5d74787dedbc4e11c1ab15bf487e61f8}{State}}}
+
+A enum that sets amount of roots constants. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{solvingutil_8h_a98f32bf1e2f8c6e97f5812f9c4d3b384}\label{solvingutil_8h_a98f32bf1e2f8c6e97f5812f9c4d3b384} 
+\index{solvingutil.h@{solvingutil.h}!equationSolver@{equationSolver}}
+\index{equationSolver@{equationSolver}!solvingutil.h@{solvingutil.h}}
+\doxysubsubsection{\texorpdfstring{equationSolver()}{equationSolver()}}
+{\footnotesize\ttfamily int equation\+Solver (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double \texorpdfstring{$\ast$}{*}}]{x1,  }\item[{double \texorpdfstring{$\ast$}{*}}]{x2 }\end{DoxyParamCaption})}
+
+
+
+Equation solver. This function connects both square and linear functions. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & Coefficient before x\texorpdfstring{$^\wedge$}{\string^}2. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & Coefficient before x. \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & Coefficient. \\
+\hline
+\mbox{\texttt{ out}}  & {\em x1} & Root 1. \\
+\hline
+\mbox{\texttt{ out}}  & {\em x2} & Root 2.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of roots.  
+\end{DoxyReturn}
+\Hypertarget{solvingutil_8h_a72ed41b6ff399603e580904bd48b12c5}\label{solvingutil_8h_a72ed41b6ff399603e580904bd48b12c5} 
+\index{solvingutil.h@{solvingutil.h}!linearSolver@{linearSolver}}
+\index{linearSolver@{linearSolver}!solvingutil.h@{solvingutil.h}}
+\doxysubsubsection{\texorpdfstring{linearSolver()}{linearSolver()}}
+{\footnotesize\ttfamily int linear\+Solver (\begin{DoxyParamCaption}\item[{double}]{b,  }\item[{double}]{c,  }\item[{double \texorpdfstring{$\ast$}{*}}]{x1 }\end{DoxyParamCaption})}
+
+
+
+Linear equation solver. Puts the root of the equation in x1. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & Coefficient before x\texorpdfstring{$^\wedge$}{\string^}2. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & Coefficient before x. \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & Coefficient. \\
+\hline
+\mbox{\texttt{ out}}  & {\em x1} & Root of the linear equation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of roots.  
+\end{DoxyReturn}
+\Hypertarget{solvingutil_8h_a0212f420b1b374b839d1025216df20ad}\label{solvingutil_8h_a0212f420b1b374b839d1025216df20ad} 
+\index{solvingutil.h@{solvingutil.h}!squareSolver@{squareSolver}}
+\index{squareSolver@{squareSolver}!solvingutil.h@{solvingutil.h}}
+\doxysubsubsection{\texorpdfstring{squareSolver()}{squareSolver()}}
+{\footnotesize\ttfamily int square\+Solver (\begin{DoxyParamCaption}\item[{double}]{a,  }\item[{double}]{b,  }\item[{double}]{c,  }\item[{double \texorpdfstring{$\ast$}{*}}]{x1,  }\item[{double \texorpdfstring{$\ast$}{*}}]{x2 }\end{DoxyParamCaption})}
+
+
+
+Square equation solver. Puts the roots of the equation in x1 and x2 if there are 2 roots, if there is 1 root puts it in x1. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em a} & Coefficient before x\texorpdfstring{$^\wedge$}{\string^}2. \\
+\hline
+\mbox{\texttt{ in}}  & {\em b} & Coefficient before x. \\
+\hline
+\mbox{\texttt{ in}}  & {\em c} & Coefficient. \\
+\hline
+\mbox{\texttt{ out}}  & {\em x1} & Root 1 of the square equation. \\
+\hline
+\mbox{\texttt{ out}}  & {\em x2} & Root 2 of the square equation.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of roots.  
+\end{DoxyReturn}

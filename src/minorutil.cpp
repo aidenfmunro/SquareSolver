@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <math.h>
-#include "../headers/minorutil.h"
+#include "minorutil.h"
 
-#define EPS 1e-9
+#define EPS 1e-5
 
 bool doubleCompare(double a, double b)
 {

@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include <assert.h>
 #include <ctype.h>
-#include "../headers/ioutil.h"
-#include "../headers/minorutil.h"
-#include "../headers/solvingutil.h"
-#include "../headers/myassert.h"
+#include "ioutil.h"
+#include "minorutil.h"
+#include "solvingutil.h"
+#include "myassert.h"
 
 int input(double *a, double *b, double *c)
 {
@@ -25,12 +25,12 @@ int input(double *a, double *b, double *c)
     return OK;
 }
 
-int output(int result, double *x1, double *x2)
+int output(int numRoots, double *x1, double *x2)
 {
-    myAssert(result, NULL_ERROR);
+    myAssert(numRoots, NULL_ERROR);
     myAssert(x1, NULL_ERROR);
     myAssert(x2, NULL_ERROR);
-    switch (result)
+    switch (numRoots)
       {
         case NO_ROOTS:
           printf("No roots.");
@@ -56,7 +56,7 @@ int output(int result, double *x1, double *x2)
 
 int checkInput(void)
 {
-    char ch = 0;
+    int ch = (char)0;
     while((ch = getchar()) != '\n')
       {
         if (!isspace(ch))

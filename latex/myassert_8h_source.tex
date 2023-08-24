@@ -1,0 +1,28 @@
+\doxysection{myassert.\+h}
+\hypertarget{myassert_8h_source}{}\label{myassert_8h_source}\index{C:/Users/aiden/Documents/GitHub/SquareSolver/headers/myassert.h@{C:/Users/aiden/Documents/GitHub/SquareSolver/headers/myassert.h}}
+\mbox{\hyperlink{myassert_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#ifndef\ MYASSERT\_H}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#define\ MYASSERT\_H}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ myAssert(EXPRESSION,\ ERROR\_CODE)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ if\ (!\ (EXPRESSION))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ fprintf\ (stderr,\ printError(ERROR\_CODE),\ \_\_FILE\_\_,\ \_\_LINE\_\_);\ \(\backslash\)}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ exit(1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\ \ \ \ \ \ \}}}
+\DoxyCodeLine{00028\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{myassert_8h_acc3bbeb6bb6e6d89e8d752be0d1d377b}{printError}}(\textcolor{keywordtype}{int}\ state);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{enum}\ \mbox{\hyperlink{myassert_8h_a622ccac4bed4b5ffcfd1acea83629286}{ERRORS}}}
+\DoxyCodeLine{00037\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ IS\_FINITE\_ERROR\ =\ 1,}
+\DoxyCodeLine{00039\ \ \ \ \ NULL\_ERROR\ =\ 2}
+\DoxyCodeLine{00040\ \};}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

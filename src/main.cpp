@@ -1,8 +1,12 @@
 #include <TXLib.h>
 #include <string.h>
-#include "../headers/solvingutil.h"
-#include "../headers/ioutil.h"
-#include "../headers/tester.h"
+#include "solvingutil.h"
+#include "ioutil.h"
+#include "tester.h"
+
+//! @file
+//! @author Aiden Munro
+//! @version 1.0
 
 int main(int argc, char *argv[])
 {

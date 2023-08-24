@@ -1,0 +1,79 @@
+\doxysection{C\+:/\+Users/aiden/\+Documents/\+Git\+Hub/\+Square\+Solver/headers/ioutil.h File Reference}
+\hypertarget{ioutil_8h}{}\label{ioutil_8h}\index{C:/Users/aiden/Documents/GitHub/SquareSolver/headers/ioutil.h@{C:/Users/aiden/Documents/GitHub/SquareSolver/headers/ioutil.h}}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{ioutil_8h_adcf03970bc5483dd791673fd1d1e618c}{input}} (double \texorpdfstring{$\ast$}{*}a, double \texorpdfstring{$\ast$}{*}b, double \texorpdfstring{$\ast$}{*}c)
+\begin{DoxyCompactList}\small\item\em This function inputs the coefficients. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ioutil_8h_a5cbf4f31b4f227c0f682d6934ec234fe}{output}} (int num\+Roots, double \texorpdfstring{$\ast$}{*}x1, double \texorpdfstring{$\ast$}{*}x2)
+\begin{DoxyCompactList}\small\item\em Function that prints the amount of roots and the roots. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{ioutil_8h_acf587fc0f1e31a49e54ab903f69dbfe3}{check\+Input}} (void)
+\begin{DoxyCompactList}\small\item\em This function ignores spaces after a user has written the coefficients. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Aiden Munro 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{ioutil_8h_acf587fc0f1e31a49e54ab903f69dbfe3}\label{ioutil_8h_acf587fc0f1e31a49e54ab903f69dbfe3} 
+\index{ioutil.h@{ioutil.h}!checkInput@{checkInput}}
+\index{checkInput@{checkInput}!ioutil.h@{ioutil.h}}
+\doxysubsubsection{\texorpdfstring{checkInput()}{checkInput()}}
+{\footnotesize\ttfamily int check\+Input (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function ignores spaces after a user has written the coefficients. 
+
+\Hypertarget{ioutil_8h_adcf03970bc5483dd791673fd1d1e618c}\label{ioutil_8h_adcf03970bc5483dd791673fd1d1e618c} 
+\index{ioutil.h@{ioutil.h}!input@{input}}
+\index{input@{input}!ioutil.h@{ioutil.h}}
+\doxysubsubsection{\texorpdfstring{input()}{input()}}
+{\footnotesize\ttfamily int input (\begin{DoxyParamCaption}\item[{double \texorpdfstring{$\ast$}{*}}]{a,  }\item[{double \texorpdfstring{$\ast$}{*}}]{b,  }\item[{double \texorpdfstring{$\ast$}{*}}]{c }\end{DoxyParamCaption})}
+
+
+
+This function inputs the coefficients. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & Coefficient before x\texorpdfstring{$^\wedge$}{\string^}2. \\
+\hline
+{\em b} & Coefficient before x. \\
+\hline
+{\em c} & Coefficient.\\
+\hline
+\end{DoxyParams}
+
+
+\begin{DoxyReturn}{Returns}
+Whether the program went ok. 
+\end{DoxyReturn}
+\Hypertarget{ioutil_8h_a5cbf4f31b4f227c0f682d6934ec234fe}\label{ioutil_8h_a5cbf4f31b4f227c0f682d6934ec234fe} 
+\index{ioutil.h@{ioutil.h}!output@{output}}
+\index{output@{output}!ioutil.h@{ioutil.h}}
+\doxysubsubsection{\texorpdfstring{output()}{output()}}
+{\footnotesize\ttfamily int output (\begin{DoxyParamCaption}\item[{int}]{num\+Roots,  }\item[{double \texorpdfstring{$\ast$}{*}}]{x1,  }\item[{double \texorpdfstring{$\ast$}{*}}]{x2 }\end{DoxyParamCaption})}
+
+
+
+Function that prints the amount of roots and the roots. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Roots} & Number of roots. \\
+\hline
+{\em x1} & Root 1. \\
+\hline
+{\em x2} & Root 2.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Whether the program went ok.  
+\end{DoxyReturn}

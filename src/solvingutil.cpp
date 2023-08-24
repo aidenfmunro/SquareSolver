@@ -2,9 +2,11 @@
 #include <math.h>
 #include <stdlib.h>
 #include <assert.h>
-#include "../headers/solvingutil.h"
-#include "../headers/minorutil.h"
-#include "../headers/myassert.h"
+#include "solvingutil.h"
+#include "minorutil.h"
+#include "myassert.h"
+
+
 
 int linearSolver(double b, double c, double *x1)
 {
@@ -12,7 +14,7 @@ int linearSolver(double b, double c, double *x1)
       {
         if (doubleCompare(c, 0))
           {
-            return INFINITE_ROOTS; // no roots
+            return INFINITE_ROOTS;
           }
         else
           {
