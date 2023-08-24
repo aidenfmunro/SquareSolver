@@ -1,4 +1,3 @@
-#include <TXLib.h>
 #include <string.h>
 #include "solvingutil.h"
 #include "ioutil.h"
