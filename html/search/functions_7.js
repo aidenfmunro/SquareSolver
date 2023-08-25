@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['printerror_0',['printError',['../myassert_8h.html#acc3bbeb6bb6e6d89e8d752be0d1d377b',1,'myassert.cpp']]]
+  ['squaresolver_0',['squareSolver',['../solvingutil_8h.html#a0212f420b1b374b839d1025216df20ad',1,'squareSolver(double a, double b, double c, double *x1, double *x2):&#160;solvingutil.cpp'],['../solvingutil_8cpp.html#a0212f420b1b374b839d1025216df20ad',1,'squareSolver(double a, double b, double c, double *x1, double *x2):&#160;solvingutil.cpp']]]
 ];

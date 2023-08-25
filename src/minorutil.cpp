@@ -1,3 +1,7 @@
+//! @file
+//! @author Aiden Munro
+//! @version 1.0
+
 #include <stdio.h>
 #include <math.h>
 #include "minorutil.h"

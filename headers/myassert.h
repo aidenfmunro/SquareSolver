@@ -13,7 +13,7 @@
 enum ERRORS
 {
     IS_FINITE_ERROR = 1,
-    NULL_ERROR = 2
+    NULL_ERROR      = 2
 };
 
 static const char *ERROR_MSG[] = {"Number is not finite", "Number is null"};

@@ -12,11 +12,6 @@ enum \mbox{\hyperlink{myassert_8h_a622ccac4bed4b5ffcfd1acea83629286}{ERRORS}} \{
 , {\bfseries NULL\+\_\+\+ERROR} = 2
  \}
 \end{DoxyCompactItemize}
-\doxysubsubsection*{Functions}
-\begin{DoxyCompactItemize}
-\item 
-const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{myassert_8h_acc3bbeb6bb6e6d89e8d752be0d1d377b}{print\+Error}} (int state)
-\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -37,10 +32,11 @@ Aiden Munro
 
 {\bfseries Value\+:}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (!\ (EXPRESSION))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ fprintf\ (stderr,\ \mbox{\hyperlink{myassert_8h_acc3bbeb6bb6e6d89e8d752be0d1d377b}{printError}}(ERROR\_CODE),\ \_\_FILE\_\_,\ \_\_LINE\_\_);\ \(\backslash\)}
-\DoxyCodeLine{\ \ \ \ \ \ \ \ exit(1);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\ (EXPRESSION))\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ fprintf\ (stderr,\textcolor{stringliteral}{"{}\%s,\ failed\ at\ \%s:\%d\(\backslash\)n"{}},\ ERROR\_MSG[ERROR\_CODE\ -\/\ SHIFT]\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ,\ \_\_FILE\_\_,\ \_\_LINE\_\_);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ exit(ERROR\_CODE);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
 \DoxyCodeLine{\ \ \ \ \ \ \}}
 
 \end{DoxyCode}
@@ -53,20 +49,4 @@ Assert macro.
 \doxysubsubsection{\texorpdfstring{ERRORS}{ERRORS}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{myassert_8h_a622ccac4bed4b5ffcfd1acea83629286}{ERRORS}}}
 
-A enum that sets error codes. 
-
-\doxysubsection{Function Documentation}
-\Hypertarget{myassert_8h_acc3bbeb6bb6e6d89e8d752be0d1d377b}\label{myassert_8h_acc3bbeb6bb6e6d89e8d752be0d1d377b} 
-\index{myassert.h@{myassert.h}!printError@{printError}}
-\index{printError@{printError}!myassert.h@{myassert.h}}
-\doxysubsubsection{\texorpdfstring{printError()}{printError()}}
-{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} print\+Error (\begin{DoxyParamCaption}\item[{int}]{state }\end{DoxyParamCaption})}
-
-
-\begin{DoxyParams}{Parameters}
-{\em Expression.} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-String with the error code. 
-\end{DoxyReturn}
+A enum that sets error code constants. 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.7"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SquareSolver: C:/Users/aiden/Documents/GitHub/SquareSolver/headers/solvingutil.h File Reference</title>
+<title>SquareSolver: C:/Users/aiden/Documents/GitHub/SquareSolver/src/solvingutil.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,64 +69,39 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_dead00bcf7978c6bf2ae96f5a267d442.html">aiden</a></li><li class="navelem"><a class="el" href="dir_1beb097056107c549cf1d64a40e7a16f.html">Documents</a></li><li class="navelem"><a class="el" href="dir_dd4e4763bc5050048dfad5afcf4f454d.html">GitHub</a></li><li class="navelem"><a class="el" href="dir_d4d78e2b97e3b8727558417a2e9c4846.html">SquareSolver</a></li><li class="navelem"><a class="el" href="dir_5057d944eab680e9ca99adedcce7d530.html">headers</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d522931ffa1371640980b621734a4381.html">Users</a></li><li class="navelem"><a class="el" href="dir_dead00bcf7978c6bf2ae96f5a267d442.html">aiden</a></li><li class="navelem"><a class="el" href="dir_1beb097056107c549cf1d64a40e7a16f.html">Documents</a></li><li class="navelem"><a class="el" href="dir_dd4e4763bc5050048dfad5afcf4f454d.html">GitHub</a></li><li class="navelem"><a class="el" href="dir_d4d78e2b97e3b8727558417a2e9c4846.html">SquareSolver</a></li><li class="navelem"><a class="el" href="dir_1cffc8fe3f8a7a78a6607495c343921f.html">src</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">solvingutil.h File Reference</div></div>
+  <div class="headertitle"><div class="title">solvingutil.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><a href="solvingutil_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a5d74787dedbc4e11c1ab15bf487e61f8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solvingutil_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8">State</a> { <br />
-&#160;&#160;<b>INFINITE_ROOTS</b> = -1
-, <b>NO_ROOTS</b> = 0
-, <b>ONE_ROOT</b> = 1
-, <b>TWO_ROOTS</b> = 2
-, <br />
-&#160;&#160;<b>OK</b> = 3
-<br />
- }</td></tr>
-<tr class="separator:a5d74787dedbc4e11c1ab15bf487e61f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;math.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;assert.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="solvingutil_8h_source.html">solvingutil.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="minorutil_8h_source.html">minorutil.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="myassert_8h_source.html">myassert.h</a>&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a72ed41b6ff399603e580904bd48b12c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solvingutil_8h.html#a72ed41b6ff399603e580904bd48b12c5">linearSolver</a> (double b, double c, double *x1)</td></tr>
+<tr class="memitem:a72ed41b6ff399603e580904bd48b12c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solvingutil_8cpp.html#a72ed41b6ff399603e580904bd48b12c5">linearSolver</a> (double b, double c, double *x1)</td></tr>
 <tr class="memdesc:a72ed41b6ff399603e580904bd48b12c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linear equation solver. Puts the root of the equation in x1.  <br /></td></tr>
 <tr class="separator:a72ed41b6ff399603e580904bd48b12c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0212f420b1b374b839d1025216df20ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solvingutil_8h.html#a0212f420b1b374b839d1025216df20ad">squareSolver</a> (double a, double b, double c, double *x1, double *x2)</td></tr>
+<tr class="memitem:a0212f420b1b374b839d1025216df20ad"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solvingutil_8cpp.html#a0212f420b1b374b839d1025216df20ad">squareSolver</a> (double a, double b, double c, double *x1, double *x2)</td></tr>
 <tr class="memdesc:a0212f420b1b374b839d1025216df20ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Square equation solver. Puts the roots of the equation in x1 and x2 if there are 2 roots, if there is 1 root puts it in x1.  <br /></td></tr>
 <tr class="separator:a0212f420b1b374b839d1025216df20ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98f32bf1e2f8c6e97f5812f9c4d3b384"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solvingutil_8h.html#a98f32bf1e2f8c6e97f5812f9c4d3b384">equationSolver</a> (double a, double b, double c, double *x1, double *x2)</td></tr>
+<tr class="memitem:a98f32bf1e2f8c6e97f5812f9c4d3b384"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="solvingutil_8cpp.html#a98f32bf1e2f8c6e97f5812f9c4d3b384">equationSolver</a> (double a, double b, double c, double *x1, double *x2)</td></tr>
 <tr class="memdesc:a98f32bf1e2f8c6e97f5812f9c4d3b384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equation solver. This function connects both square and linear functions.  <br /></td></tr>
 <tr class="separator:a98f32bf1e2f8c6e97f5812f9c4d3b384"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Aiden Munro </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0 </dd></dl>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="a5d74787dedbc4e11c1ab15bf487e61f8" name="a5d74787dedbc4e11c1ab15bf487e61f8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d74787dedbc4e11c1ab15bf487e61f8">&#9670;&#160;</a></span>State</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="solvingutil_8h.html#a5d74787dedbc4e11c1ab15bf487e61f8">State</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>A enum that sets amount of roots constants. </p>
-
-</div>
-</div>
-<h2 class="groupheader">Function Documentation</h2>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a98f32bf1e2f8c6e97f5812f9c4d3b384" name="a98f32bf1e2f8c6e97f5812f9c4d3b384"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a98f32bf1e2f8c6e97f5812f9c4d3b384">&#9670;&#160;</a></span>equationSolver()</h2>
 

@@ -23,11 +23,6 @@ void testEquation(char filename[]);
 
 bool checkTest(bool state);
 
-
-
-
-
-
 #endif
 
 

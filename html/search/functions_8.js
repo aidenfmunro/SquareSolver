@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['squaresolver_0',['squareSolver',['../solvingutil_8h.html#a0212f420b1b374b839d1025216df20ad',1,'solvingutil.cpp']]]
+  ['testequation_0',['testEquation',['../tester_8cpp.html#a2f2c231f12a5a21406e38aed7d8770d7',1,'testEquation(char filename[]):&#160;tester.cpp'],['../tester_8h.html#a2f2c231f12a5a21406e38aed7d8770d7',1,'testEquation(char filename[]):&#160;tester.cpp']]]
 ];

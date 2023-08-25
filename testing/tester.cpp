@@ -1,3 +1,7 @@
+//! @file
+//! @author Aiden Munro
+//! @version 1.0
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -10,7 +14,7 @@ void testEquation(char filename[])
     FILE *fp = fopen(filename, "r");
     if (fp == NULL)
       {
-        printf("Unable to open file");
+        printf("Unable to open file\n");
         return;
       }
 
