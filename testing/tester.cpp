@@ -43,6 +43,12 @@ void testEquation(void)
             printf("%lg %lg ", x1, x2);
             checkTest(doubleCompare(x1, x1_test) && doubleCompare(x2, x2_test));
           }
+        else if (numRoots == NO_ROOTS)
+          {
+            printf("%lg %lg %lg %lg ", a, b, c, numRoots_t);
+            checkTest(doubleCompare(numRoots_t, numRoots));
+          }
+
       }
 
     fclose(fp);
