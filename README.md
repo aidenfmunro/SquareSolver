@@ -9,9 +9,9 @@ cd SquareSolver && make
 Now you have 2 options:
 1. Run through tests. 
 2. Solve a quadratic equation.
-If you want to run tests then type -t:
+If you want to run tests then type -t and the address of the txt file:
 ```
-a.exe -t
+a.exe -t testing/tests.txt
 ```
 Another thing. You can change the tests.txt file. The tests file looks like this:
 ```
