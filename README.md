@@ -12,9 +12,6 @@ make
 After that you have 2 options:
 1. Run through tests. 
 2. Solve a quadratic equation.
-```
-git clone https://github.com/aidenfmunro/SquareSolver
-```
 If you want to run tests then type -t:
 ```
 a.exe -t
