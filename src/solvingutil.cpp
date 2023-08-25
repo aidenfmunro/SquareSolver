@@ -31,13 +31,11 @@ int linearSolver(double b, double c, double *x1)
 
 int squareSolver(double a, double b, double c, double *x1, double *x2)
 {
-    double d = 0;
-    double sqrtd = 0;
-    double temp_x1 = 0;
-    double temp_x2 = 0;
+    myAssert(x1, NULL_ERROR);
+    myAssert(x2, NULL_ERROR);
 
+    double d = b * b - 4 * a * c;
 
-    d = b * b - 4 * a * c;
     if (d < 0)
       {
         return NO_ROOTS;
@@ -50,10 +48,10 @@ int squareSolver(double a, double b, double c, double *x1, double *x2)
       }
     else
       {
-        sqrtd = sqrt(d);
+        double sqrtd = sqrt(d);
 
-        temp_x1 = (-b + sqrtd) / (2 * a);
-        temp_x2 = (-b - sqrtd) / (2 * a);
+        double temp_x1 = (-b + sqrtd) / (2 * a);
+        double temp_x2 = (-b - sqrtd) / (2 * a);
 
         if (temp_x1 > temp_x2)
           {

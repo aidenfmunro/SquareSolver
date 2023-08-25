@@ -7,6 +7,18 @@
 
 /**
  *
+ * A enum that
+ *
+ */
+
+enum yes_or_no_char
+{
+  YES = 1,
+  NO = 0
+};
+
+/**
+ *
  * @param a Coefficient before x^2.
  * @param b Coefficient before x.
  * @param c Coefficient.

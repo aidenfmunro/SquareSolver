@@ -48,6 +48,11 @@ void testEquation(void)
             printf("%lg %lg %lg %lg ", a, b, c, numRoots_t);
             checkTest(doubleCompare(numRoots_t, numRoots));
           }
+        else if (numRoots == INFINITE_ROOTS)
+          {
+            printf("%lg %lg %lg %lg ", a, b, c, numRoots_t);
+            checkTest(doubleCompare(numRoots_t, numRoots));
+          }
 
       }
 

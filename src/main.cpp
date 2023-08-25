@@ -9,7 +9,9 @@ int main(int argc, char *argv[])
 {
     if (argc < 2)
       {
-        printf("You forgot to type in s- or t- , oopsies");
+        printf("You forgot to type in -s or -t , oopsies");
+
+        return OK;
       }
     if (strcmp (argv[1], "-s") == 0)
       {

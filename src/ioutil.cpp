@@ -59,7 +59,7 @@ int checkInput(void)
     while((ch = getchar()) != '\n')
       {
         if (!isspace(ch))
-          return 1;
+          return YES;
       }
-    return 0;
+    return NO;
 }
