@@ -11,7 +11,7 @@
  *
  */
 
-void testEquation(void);
+void testEquation(char filename[]);
 
 /**
  *

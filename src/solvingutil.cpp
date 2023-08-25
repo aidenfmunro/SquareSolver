@@ -6,8 +6,6 @@
 #include "minorutil.h"
 #include "myassert.h"
 
-
-
 int linearSolver(double b, double c, double *x1)
 {
     if (doubleCompare(b, 0))

@@ -5,12 +5,9 @@
 #include "minorutil.h"
 #include "tester.h"
 
-void testEquation(void)
+void testEquation(char filename[])
 {
-    char name[] = "testing/tests.txt";
-
-    FILE *fp = fopen(name, "r");
-
+    FILE *fp = fopen(filename, "r");
     if (fp == NULL)
       {
         printf("Unable to open file");
@@ -21,7 +18,6 @@ void testEquation(void)
     double x1 = NAN, x2 = NAN, x1_test = NAN, x2_test = NAN;
 
     int LINES = 0;
-
     fscanf(fp, "%d", &LINES);
 
     for (int i =  0; i < LINES; i++)
