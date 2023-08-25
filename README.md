@@ -3,18 +3,12 @@
 Open Git Bash. Change the current directory to the location where you want the cloned directory, then type:
 ```
 git clone https://github.com/aidenfmunro/SquareSolver
+cd SquareSolver && make
 ```
 # Usage
-Navigate to the directory in cmd and use make.
-```
-make
-```
-After that you have 2 options:
+Now you have 2 options:
 1. Run through tests. 
 2. Solve a quadratic equation.
-```
-git clone https://github.com/aidenfmunro/SquareSolver
-```
 If you want to run tests then type -t:
 ```
 a.exe -t
